@@ -6,7 +6,7 @@ import (
 	"log"
 )
 
-func fromCommandLine() {
+func SubCommand() {
 	name := flag.String("name", "World", "the name to use in the greeting")
 	flag.Parse()
 
