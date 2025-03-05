@@ -1,9 +1,10 @@
 package main
 
 import (
-	lbcli "cli"
 	"flag"
-	"newdb"
+
+	"./lbcli"
+	"./newdb"
 )
 
 func main() {
