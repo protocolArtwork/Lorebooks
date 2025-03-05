@@ -2,9 +2,8 @@ package main
 
 import (
 	"flag"
-
-	"./lbcli"
-	"./newdb"
+	"lbcli"
+	"newdb"
 )
 
 func main() {
@@ -12,10 +11,10 @@ func main() {
 	var args []string = flag.Args()
 
 	if len(args) < 1 {
-		lbcli.Fatal("No database name provided")
+		lbcli.Fatal("No subcommand provided")
 		return
 	} else if len(args) < 2 {
-		lbcli.Fatal("No subcommand provided")
+		lbcli.Fatal("No database provided")
 		return
 	}
 
