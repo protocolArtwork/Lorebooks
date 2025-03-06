@@ -1,11 +1,15 @@
 package schema
 
-import "time"
+import (
+	"time"
 
-// this is not a gorm Model, but is used inside of other gorm models
-// DO NOT MARK THIS AS A GORM MODEL. IT WILL CREATE A WHOLE NEW TABLE IN THE SQL SCHEMA
+	"gorm.io/gorm"
+)
+
 type BookEntry struct {
-	ID            uint  `gorm:"primaryKey autoIncrement"`
+	gorm.Model
+
+	EntryID       uint  `gorm:"primaryKey autoIncrement"`
 	CreatedAt     int64 `gorm:"autoCreateTime index"`
 	LastUpdatedAt int64 `gorm:"autoUpdateTime"`
 

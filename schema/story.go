@@ -6,8 +6,10 @@ import (
 	"gorm.io/gorm"
 )
 
-type Story struct {
+type StoryChapter struct {
 	gorm.Model
+
+	InnerHTML string
 
 	Start time.Time `gorm:"autoCreateTime:milli"`
 	End   time.Time `gorm:"autoCreateTime:milli"`

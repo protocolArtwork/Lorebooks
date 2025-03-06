@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"schema"
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
@@ -29,7 +30,7 @@ func NewDB(dbpath string) (*gorm.DB, error) {
 			lbcli.Action(fmt.Sprintf("Created new lorebook at %s", abspath))
 
 			// Migrate the schema
-			err = db.AutoMigrate()
+			err = db.AutoMigrate(schema.BookEntry{}, schema.Character{})
 			if err != nil {
 				panic("failed to migrate schema")
 			}
